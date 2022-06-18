@@ -23,3 +23,5 @@ while True:
     grau_min = min(360 - maior_ang + menor_ang, maior_ang - menor_ang)
 
     print("O menor ângulo é de {0}º".format(grau_min))
+
+print("Fim...")

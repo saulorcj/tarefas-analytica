@@ -16,4 +16,5 @@ for numero in sorted(freq_by_numero):
     print("O número {0} apareceu {1} {2}".format(numero,
                                                  frequencia,
                                                  "vez" if frequencia == 1 else "vezes"))
+
 print("Fim...")
