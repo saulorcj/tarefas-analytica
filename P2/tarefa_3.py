@@ -5,11 +5,8 @@ moedas = [1, 0.5, 0.25, 0.1, 0.05, 0.01]
 
 while True:
     entrada = input()
-
-    # Interrompe o programa
     if entrada == "f":
         break
-
     # Verifica a formatação da entrada
     if not re.search("^\d+.\d{2}$", entrada):
         print("Input Inválido")

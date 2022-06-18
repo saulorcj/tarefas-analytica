@@ -1,6 +1,9 @@
 from collections import defaultdict
 import re
 
+# Dicionário frequência por número
+# Se a chave não existir, ele a cria ligada a um inteiro com valor zero
+# Evita ter que criar um if só para saber se a chave existe
 freq_by_numero = defaultdict(int)
 
 numero = input()

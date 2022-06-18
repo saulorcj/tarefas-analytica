@@ -2,8 +2,6 @@ import re
 
 while True:
     entrada = input()
-
-    # Interrompe o programa
     if entrada == "f":
         break
     # Verifica a formatação da entrada
