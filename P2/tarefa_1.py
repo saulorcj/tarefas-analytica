@@ -3,6 +3,9 @@ import re
 while True:
     entrada = input()
 
+    # Interrompe o programa
+    if entrada == "f":
+        break
     # Verifica a formatação da entrada
     if not re.search('^([0-1][0-9]|2[0-3]):[0-5][0-9]$', entrada):
         print("Input inválido")
