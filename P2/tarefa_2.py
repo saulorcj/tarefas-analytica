@@ -10,7 +10,6 @@ while True:
     entrada = input()
     if entrada == "f":
         break
-
     # Verifica a formatação da entrada
     if not re.search("^[a-h][1-8] [a-h][1-8]$", entrada):
         print("Input Inválido")

@@ -15,12 +15,13 @@ while True:
 
     print("NOTAS:")
     for nota in notas:
-        qtd = int(total // nota)
+        qtd = total // nota
         total -= nota * qtd
-        print("{0} nota(s) de R$ {1:.2f}".format(qtd, nota))
+        print("{0:.0f} nota(s) de R$ {1:.2f}".format(qtd, nota))
+
     print("\n"
           "MOEDAS:")
     for moeda in moedas:
-        qtd = int(total // moeda)
+        qtd = total // moeda
         total -= moeda * qtd
-        print("{0} moeda(s) de R$ {1:.2f}".format(qtd, moeda))
+        print("{0:.0f} moeda(s) de R$ {1:.2f}".format(qtd, moeda))
