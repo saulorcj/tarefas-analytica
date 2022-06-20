@@ -12,14 +12,10 @@ def get_media_proporcao(ano, indicador):
     return media
 
 
-# Dados Gerais em 2019
-media_proporcao_geral = get_media_proporcao(2019, "PNT Geral")
-print("media de pessoas: {0:.2f}%".format(media_proporcao_geral))
+indicadores = ("PNT Geral", "PNT Mulheres negras", "PNT Mulheres responsáveis por domicílio menos 2 salários mínimos")
+anos = (2019, )
 
-# Dados sobre mulheres negras em 2019
-media_proporcao_mulh_negras = get_media_proporcao(2019, "PNT Mulheres negras")
-print("media de mulheres negras: {0:.2f}%".format(media_proporcao_mulh_negras))
-
-# Dados sobre mulheres responsáveis por domicílios menos 2 salários mínimos
-media_proporcao_mulh_dom = get_media_proporcao(2019, "PNT Mulheres responsáveis por domicílio menos 2 salários mínimos")
-print("media de mulheres responsáveis por domicílios: {0:.2f}%".format(media_proporcao_mulh_dom))
+for ano, indicador in zip(anos * 3, indicadores):
+    print("ANO: {0}, INDICADOR: {1}".format(ano, indicador))
+    media = get_media_proporcao(ano, indicador)
+    print("media: {0:.2f}%".format(media))
