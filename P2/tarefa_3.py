@@ -1,7 +1,7 @@
 import re
 
 notas = [100, 50, 20, 10, 5, 2]
-moedas = [1, 0.5, 0.25, 0.1, 0.05, 0.01]
+moedas = [100, 50, 25, 10, 5, 1]
 
 while True:
     entrada = input()
@@ -11,12 +11,13 @@ while True:
     if not re.search("^\d+.\d{2}$", entrada):
         print("Input Inválido")
         continue
-    total = float(entrada)
+    # Transformo em int para evitar erros de arredondamento
+    total = (float(entrada) * 100)
 
     print("NOTAS:")
     for nota in notas:
-        qtd = total // nota
-        total -= nota * qtd
+        qtd = total // (100 * nota)
+        total -= nota * qtd * 100
         print("{0:.0f} nota(s) de R$ {1:.2f}".format(qtd, nota))
 
     print("\n"
@@ -24,4 +25,4 @@ while True:
     for moeda in moedas:
         qtd = total // moeda
         total -= moeda * qtd
-        print("{0:.0f} moeda(s) de R$ {1:.2f}".format(qtd, moeda))
+        print("{0:.0f} moeda(s) de R$ {1:.2f}".format(qtd, moeda / 100))
