@@ -1,11 +1,14 @@
 import re
 
+# Evita ter que compilar a expressão regular para toda string
+regex = re.compile('^([0-1][0-9]|2[0-3]):[0-5][0-9]$')
+
 while True:
     entrada = input()
     if entrada == "f":
         break
     # Verifica a formatação da entrada
-    if not re.search('^([0-1][0-9]|2[0-3]):[0-5][0-9]$', entrada):
+    if not regex.search(entrada):
         print("Input inválido")
         continue
     horas, minutos = map(int, entrada.split(":"))

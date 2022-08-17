@@ -6,12 +6,15 @@ possiv_deslc = {(-1, 2), (-2, 1), (-2, -1), (-1, -2),
                 (1, -2), (2, -1), (2, 1), (1, 2)}
 numero_by_letra = dict(zip("abcdefgh", range(1, 9)))
 
+# Evita ter que compilar a expressão regular para toda string
+regex = re.compile("^[a-h][1-8] [a-h][1-8]$")
+
 while True:
     entrada = input()
     if entrada == "f":
         break
     # Verifica a formatação da entrada
-    if not re.search("^[a-h][1-8] [a-h][1-8]$", entrada):
+    if not regex.search(entrada):
         print("Input Inválido")
         continue
 

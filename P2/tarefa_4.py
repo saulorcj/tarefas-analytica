@@ -6,10 +6,13 @@ import re
 # Evita ter que criar um if só para saber se a chave existe e realiza somente uma busca no HashMap
 freq_by_numero = defaultdict(int)
 
+# Evita ter que compilar a expressão regular para toda string
+regex = re.compile("^\d+$")
+
 numero = input()
 while numero != "f":
     # Verifica a formatação da entrada
-    if re.search("^\d+$", numero):
+    if regex.search(numero):
         freq_by_numero[int(numero)] += 1
     numero = input()
 
